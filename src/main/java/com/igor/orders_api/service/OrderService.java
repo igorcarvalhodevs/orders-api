@@ -8,6 +8,8 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
+import com.igor.orders_api.exception.OrderNotFoundException;
+
 @Service
 public class OrderService {
 
@@ -28,7 +30,7 @@ public class OrderService {
 
     public OrderResponse findById(Long id) {
         Order order = repository.findById(id)
-                .orElseThrow(() -> new RuntimeException("Order not found"));
+                .orElseThrow(() -> new OrderNotFoundException(id));
         return toResponse(order);
     }
 
