@@ -3,12 +3,11 @@ package com.igor.orders_api.service;
 import com.igor.orders_api.dto.CreateOrderRequest;
 import com.igor.orders_api.dto.OrderResponse;
 import com.igor.orders_api.entity.Order;
+import com.igor.orders_api.exception.OrderNotFoundException;
 import com.igor.orders_api.repository.OrderRepository;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
-
-import com.igor.orders_api.exception.OrderNotFoundException;
 
 @Service
 public class OrderService {
